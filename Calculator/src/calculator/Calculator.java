@@ -16,13 +16,7 @@ public class Calculator {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        // Ciao grazia
-        // ciao teo <3
-        // lalalalal
-        // Teo test 2
-        //Sono simoneee
-        //Sono guaro
-        //Ciao
+
     }
     
 }
