@@ -33,6 +33,8 @@ public class Calculator {
             op = br.readLine();
             System.out.print("\nInserisci operando 2: ");
             val2= br.readLine();
+            String res = cal.parse(val1, op, val2);
+            System.out.println("Risultato: "+res);
         } catch (IOException ex) {
             Logger.getLogger(Calculator.class.getName()).log(Level.SEVERE, null, ex);
         }
