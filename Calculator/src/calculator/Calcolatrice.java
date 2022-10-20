@@ -23,19 +23,19 @@ public class Calcolatrice {
         this.Memory = new HashMap<String, Double>();
     }
     
-    private double sum(double a, double b){
+    double sum(double a, double b){
         return (a+b);
     }
     
-    private double difference(double a, double b){
+    double difference(double a, double b){
         return a-b;
     }
     
-    private double product(double a, double b){
+    double product(double a, double b){
         return a*b;
     }
     
-    private double ratio(double a,double b)throws ZeroDivisionException{
+    double ratio(double a,double b)throws ZeroDivisionException{
         if (b == 0){
             throw new ZeroDivisionException();
         }
@@ -48,8 +48,8 @@ public class Calcolatrice {
         this.ans = ans;
     }
     
-    void showAns(){
-        System.out.println(Double.toString(this.ans));
+    String showAns(){
+        return Double.toString(this.ans);
     }
     
     
@@ -80,6 +80,16 @@ public class Calcolatrice {
             return Double.toString(product(a,b));
         }
         return "Operando non supportato";
+    }
+    
+    public String parse(String val1, String op){
+        
+        if((op.equals("=")) && (val1.equalsIgnoreCase(val1))){
+            return showAns();
+        }
+        else{
+            return "Operatore non supportato";
+        }
     }
     
     
