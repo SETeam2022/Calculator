@@ -16,6 +16,9 @@ import java.util.logging.Logger;
  * @author graanephilim
  */
 public class Calculator {
+    
+    private static final String opBinarie[]= {"tan","=","sin","cos","arctan"};
+   
 
     /**
      * @param args the command line arguments
@@ -32,11 +35,14 @@ public class Calculator {
 
         while (true) {
             try {
-
+                
                 System.out.print("\nInserisci operazione: ");
                 op = br.readLine();
-                if (op.equals("=")){
-                    System.out.print("\nInserisci ans o M: ");
+                boolean op2=false;
+                for(String x : opBinarie) if(x.equalsIgnoreCase(op)) op2=true;
+                
+                if (op2){
+                    System.out.print("\nInserisci unico operando: ");
                     val1 = br.readLine();
                     res = cal.parse(op, val1);
                 } else {
