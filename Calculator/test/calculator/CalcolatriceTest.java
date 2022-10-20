@@ -72,27 +72,7 @@ public class CalcolatriceTest {
         a.ratio(3, 0);
     }
     
-    @Test
-    public void testParse(){
-        assertTrue(a.parse("c", "1", "2").equalsIgnoreCase("Operatore non supportato"));
-        assertTrue(a.parse("+", "1", "2").equalsIgnoreCase("3.0"));
-        assertTrue(a.parse("-", "1", "2").equalsIgnoreCase("-1.0"));
-        assertTrue(a.parse("*", "1", "2").equalsIgnoreCase("2.0"));
-        assertTrue(a.parse("/", "8", "2").equalsIgnoreCase("4.0"));
-    }
-    
-    @Test
-    public void testGetAns(){
-        double b = a.sum(4,3);
-        assertEquals(a.getAns(), b, 0);
-        b = a.difference(4,3);
-        assertEquals(a.getAns(), b, 0);
-        b = a.product(4,3);
-        assertEquals(a.getAns(), b, 0);
-        b = a.ratio(4,3);
-        assertEquals(a.getAns(), b, 0);
-    }  
-    
+        
     @Test
     public void testSin(){
         double b = Math.sin(30);
@@ -116,5 +96,34 @@ public class CalcolatriceTest {
         double b = 1/Math.tan(90);
         assertEquals(b, a.arctan(90), 0);
     }
+    
+    @Test
+    public void testParse(){
+        assertTrue(a.parse("c", "1", "2").equalsIgnoreCase("Operatore non supportato"));
+        assertTrue(a.parse("+", "1", "2").equalsIgnoreCase("3.0"));
+        assertTrue(a.parse("-", "1", "2").equalsIgnoreCase("-1.0"));
+        assertTrue(a.parse("*", "1", "2").equalsIgnoreCase("2.0"));
+        assertTrue(a.parse("/", "8", "2").equalsIgnoreCase("4.0"));
+    }
+    
+    @Test
+    public void testGetAns(){
+        double b = a.sum(4,3);
+        assertEquals(a.getAns(), b, 0);
+        b = a.difference(4,3);
+        assertEquals(a.getAns(), b, 0);
+        b = a.product(4,3);
+        assertEquals(a.getAns(), b, 0);
+        b = a.ratio(4,3);
+        assertEquals(a.getAns(), b, 0);
+        b = a.sin(30);
+        assertEquals(a.getAns(),b, 0);
+        b = a.cos(30);
+        assertEquals(a.getAns(),b, 0);
+        b = a.tan(90);
+        assertEquals(a.getAns(),b, 0);
+        b = a.arctan(90);
+        assertEquals(a.getAns(),b, 0);
+    }  
     
 }
