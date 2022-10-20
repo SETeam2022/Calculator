@@ -69,12 +69,20 @@ public class Calcolatrice {
         return 1/Math.tan(a);
     }
 
+    double getAns() {
+        return (this.ans);
+    }
+    
+    double getM(){
+        return(this.M);
+    }
+    
     void setAns(double ans) {
         this.ans = ans;
     }
-
-    double getAns() {
-        return (this.ans);
+    
+    void updateM(double increment){
+        this.M += increment;
     }
     
     private Double parseVal(String val){
@@ -97,18 +105,20 @@ public class Calcolatrice {
             case "/":
                 return Double.toString(ratio(a, b));
             case "*":
-                return Double.toString(product(a, b));
-            default: 
-                return "Operatore non supportato";
+                return Double.toString(product(a, b));   
         }
+        
+        return "Operatore non supportato";
+        
     }
 
     public String parse(String op, String val1) {
         
         Double a = parseVal(val1);
-
+        
         switch (op) {
             case "=":
+                System.out.println("Sono qui");
                 return Double.toString(a);
             case "sin":
                 return Double.toString(sin(a));
@@ -118,9 +128,20 @@ public class Calcolatrice {
                 return Double.toString(tan(a));
             case "arctan":
                 return Double.toString(arctan(a));
-            default:
-                return "Operatore non supportato";
+            case "M+":
+                updateM(a);
+                return Double.toString(M);
+            case "M-":
+                updateM(-a);
+                return Double.toString(M);
         }
+        
+        return "Operatore non supportato";
+    }
+    
+    public void parse(String op){
+        M=0;
+        // ToDo: init all variables in memory
     }
 
 }
