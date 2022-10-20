@@ -17,28 +17,43 @@ import static org.junit.Assert.*;
  */
 public class CalcolatriceTest {
     
-public CalcolatriceTest() {
+    private static final double DELTA = 1e-15;
+    Calcolatrice a;
+    
+    public CalcolatriceTest() {
+        
+        }
+  
+    @Before
+    public void fixture(){
+        a = new Calcolatrice();
     }
     
-    @BeforeClass
-    public static void setUpClass() {
-    }
-    
-    @AfterClass
-    public static void tearDownClass() {
-    }
-
     @Test
     public void testSum() {
-        Calcolatrice a = new Calcolatrice();
-        assertEquals(7, a.sum(4,3),0); // entrambi i numeri positivi
-        assertEquals(-7, a.sum(-4,-3),0); // entrambi i numeri negativi
-        assertEquals(1, a.sum(4,-3),0); // il primo maggiore in modulo
-        assertEquals(-1, a.sum(3,-4),0); // il secondo maggiore in modulo
-        assertEquals(4, a.sum(4,0),0); // uno degli operandi è 0
+
+        assertEquals(7, a.sum(4,3),DELTA); // entrambi i numeri positivi
+        assertEquals(-7, a.sum(-4,-3),DELTA); // entrambi i numeri negativi
+        assertEquals(1, a.sum(4,-3),DELTA); // il primo maggiore in modulo
+        assertEquals(-1, a.sum(3,-4),DELTA); // il secondo maggiore in modulo
+        assertEquals(4, a.sum(4,0),DELTA); // uno degli operandi è 0
         // to do -> uno degli operandi è al confine di rappresentazione
         //
     }
+    
+        @Test
+    public void testDifference() {
+
+        assertEquals(1, a.difference(4,3),DELTA); // entrambi i numeri positivi
+        assertEquals(-1, a.difference(-4,-3),DELTA); // entrambi i numeri negativi
+        assertEquals(7, a.difference(4,-3),DELTA); // il primo maggiore in modulo
+        assertEquals(7, a.difference(3,-4),DELTA); // il secondo maggiore in modulo
+        assertEquals(4, a.difference(4,0),DELTA); // uno degli operandi è 0
+        // to do -> uno degli operandi è al confine di rappresentazione
+        //
+    }
+    
+ 
     
     
 }
