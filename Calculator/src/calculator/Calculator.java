@@ -28,11 +28,8 @@ public class Calculator {
         
         Calcolatrice cal = new Calcolatrice();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String val1 = "";
-        String op = "";
-        String val2 = "";
-        String res = "";
-        int op2 = 0;
+        String val1, op, val2, res;
+        int op2;
 
         System.out.print("\nCALCOLATRICE POLACCA\n");
 
