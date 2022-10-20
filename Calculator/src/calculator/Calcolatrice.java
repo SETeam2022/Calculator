@@ -61,6 +61,9 @@ public class Calcolatrice {
     
     public String parse(String val1, String op , String val2){
         
+        if(val1.equalsIgnoreCase("ans")) val1 = Double.toString(ans);
+        
+        
         Double a = Double.parseDouble(val1);
         Double b = Double.parseDouble(val2);
         
@@ -85,6 +88,7 @@ public class Calcolatrice {
         }
         return "Operatore non supportato";
     }
+  
     
     public String parse(String val1, String op){
         
