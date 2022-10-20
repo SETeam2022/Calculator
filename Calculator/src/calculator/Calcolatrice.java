@@ -79,7 +79,7 @@ public class Calcolatrice {
             setAns(product(a,b));
             return Double.toString(product(a,b));
         }
-        return "Operando non supportato";
+        return "Operatore non supportato";
     }
     
     public String parse(String val1, String op){
