@@ -108,8 +108,27 @@ public class Calcolatrice {
     public String parse(String op, String val1) {
 
         if ((op.equals("=")) && (val1.equalsIgnoreCase("ans"))) {
+            
             return Double.toString(showAns());
+            
+        } else if (op.equals("sin")){
+            
+            return Double.toString(sin(Double.parseDouble(val1)));
+            
+        } else if (op.equals("cos")){
+            
+            return Double.toString(cos(Double.parseDouble(val1)));
+            
+        } else if (op.equals("tan")){
+            
+            return Double.toString(tan(Double.parseDouble(val1)));
+            
+        } else if (op.equals("arctan")){
+            
+            return Double.toString(arctan(Double.parseDouble(val1)));
+            
         } else {
+            
             return "Operatore non supportato";
         }
     }
