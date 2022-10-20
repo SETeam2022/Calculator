@@ -74,7 +74,7 @@ public class Calcolatrice {
     }
     
     double getM(){
-        return(this.M);
+        return (this.M);
     }
     
     void setAns(double ans) {
@@ -118,7 +118,6 @@ public class Calcolatrice {
         
         switch (op) {
             case "=":
-                System.out.println("Sono qui");
                 return Double.toString(a);
             case "sin":
                 return Double.toString(sin(a));
@@ -137,6 +136,7 @@ public class Calcolatrice {
         }
         
         return "Operatore non supportato";
+        
     }
     
     public void parse(String op){
