@@ -82,15 +82,15 @@ public class CalcolatriceTest {
     }
     
     @Test
-    public void testShowAns(){
+    public void testGetAns(){
         double b = a.sum(4,3);
-        assertEquals(a.showAns(), b, 0);
+        assertEquals(a.getAns(), b, 0);
         b = a.difference(4,3);
-        assertEquals(a.showAns(), b, 0);
+        assertEquals(a.getAns(), b, 0);
         b = a.product(4,3);
-        assertEquals(a.showAns(), b, 0);
+        assertEquals(a.getAns(), b, 0);
         b = a.ratio(4,3);
-        assertEquals(a.showAns(), b, 0);
+        assertEquals(a.getAns(), b, 0);
     }  
     
     @Test
