@@ -46,6 +46,28 @@ public class Calcolatrice {
     
     
     
+    public String parse(String val1, String op , String val2){
+        
+        Double a = Double.parseDouble(val1);
+        Double b = Double.parseDouble(val2);
+        
+        if(op.equals("+")){
+            return Double.toString(sum(a,b));
+        }
+        
+        if(op.equals("-")){
+            return Double.toString(difference(a,b));
+        }
+        
+        if(op.equals("/")){
+            return Double.toString(ratio(a,b));
+        }
+        
+        if(op.equals("*")){
+            return Double.toString(product(a,b));
+        }
+        return "Operando non supportato";
+    }
     
     
 }
