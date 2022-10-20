@@ -48,8 +48,8 @@ public class Calcolatrice {
         this.ans = ans;
     }
     
-    String showAns(){
-        return Double.toString(this.ans);
+    double showAns(){
+        return (this.ans);
     }
     
     
@@ -84,8 +84,8 @@ public class Calcolatrice {
     
     public String parse(String val1, String op){
         
-        if((op.equals("=")) && (val1.equalsIgnoreCase(val1))){
-            return showAns();
+        if((op.equals("=")) && (val1.equalsIgnoreCase("ans"))){
+            return Double.toString(showAns());
         }
         else{
             return "Operatore non supportato";
