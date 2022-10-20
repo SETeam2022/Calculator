@@ -43,6 +43,15 @@ public class Calcolatrice {
             return a/b;
         }
     }
+
+    void setAns(double ans) {
+        this.ans = ans;
+    }
+    
+    void showAns(){
+        System.out.println(Double.toString(this.ans));
+    }
+    
     
     
     
@@ -52,18 +61,22 @@ public class Calcolatrice {
         Double b = Double.parseDouble(val2);
         
         if(op.equals("+")){
+            setAns(sum(a,b));
             return Double.toString(sum(a,b));
         }
         
         if(op.equals("-")){
+            setAns(difference(a,b));
             return Double.toString(difference(a,b));
         }
         
         if(op.equals("/")){
+            setAns(ratio(a,b));
             return Double.toString(ratio(a,b));
         }
         
         if(op.equals("*")){
+            setAns(product(a,b));
             return Double.toString(product(a,b));
         }
         return "Operando non supportato";
