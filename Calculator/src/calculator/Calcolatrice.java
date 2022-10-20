@@ -35,9 +35,9 @@ public class Calcolatrice {
         return a*b;
     }
     
-    private double ratio(double a,double b)throws CalcolatriceException{
+    private double ratio(double a,double b)throws ZeroDivisionException{
         if (b == 0){
-            throw new CalcolatriceException();
+            throw new ZeroDivisionException();
         }
         else{
             return a/b;
