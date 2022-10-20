@@ -84,7 +84,7 @@ public class Calcolatrice {
     
     public String parse(String val1, String op){
         
-        if((op.equals("=")) && (val1.equalsIgnoreCase(val1))){
+        if((op.equals("=")) && (val1.equalsIgnoreCase("ans"))){
             return showAns();
         }
         else{
