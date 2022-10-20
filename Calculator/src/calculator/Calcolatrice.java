@@ -24,14 +24,17 @@ public class Calcolatrice {
     }
     
     double sum(double a, double b){
+        setAns(a+b);
         return (a+b);
     }
     
     double difference(double a, double b){
+        setAns(a-b);
         return a-b;
     }
     
     double product(double a, double b){
+        setAns(a*b);
         return a*b;
     }
     
@@ -40,6 +43,7 @@ public class Calcolatrice {
             throw new ZeroDivisionException();
         }
         else{
+            setAns(a/b);
             return a/b;
         }
     }
