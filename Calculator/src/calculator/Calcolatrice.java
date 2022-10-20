@@ -47,6 +47,22 @@ public class Calcolatrice {
             return a / b;
         }
     }
+    
+    double sin(double a){
+        return Math.sin(a);
+    }
+    
+    double cos(double a){
+        return Math.cos(a);
+    }
+    
+    double tan(double a){
+        return Math.tan(a);
+    }
+    
+    double arctan(double a){
+        return 1/Math.tan(a);
+    }
 
     void setAns(double ans) {
         this.ans = ans;
