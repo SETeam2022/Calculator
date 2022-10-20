@@ -23,14 +23,31 @@ public class Calculator {
     public static void main(String[] args) {
         Calcolatrice cal = new Calcolatrice();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String val1="";
-        String op="";
-        String val2="";
-        String res="";
-        while(true){
-        try {
-            System.out.print("\nInserisci operando 1: ");
-            val1 = br.readLine();
+        String val1 = "";
+        String op = "";
+        String val2 = "";
+        String res = "";
+
+        System.out.print("\nCALCOLATRICE POLACCA INVERSA\n");
+
+        while (true) {
+            try {
+
+                System.out.print("\nInserisci operazione: ");
+                op = br.readLine();
+                if (op.equals("=")){
+                    System.out.print("\nInserisci ans o M: ");
+                    val1 = br.readLine();
+                    res = cal.parse(op, val1);
+                } else {
+                    System.out.print("\nInserisci operando 1: ");
+                    val1 = br.readLine();
+                    System.out.print("\nInserisci operando 2: ");
+                    val2 = br.readLine();
+                    res = cal.parse(op, val1, val2);
+                }
+                System.out.println("Risultato: "+res);
+                /*
             System.out.print("\nInserisci operazione: ");
             op = br.readLine();
             if(op.equalsIgnoreCase("=")) res = cal.parse(val1, op);
@@ -40,13 +57,15 @@ public class Calculator {
             res =cal.parse(val1, op, val2);
             }
             System.out.println("Risultato: "+res);
-        } catch (IOException ex) {
-            Logger.getLogger(Calculator.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        }
-       // System.out.println("\nOperando 1: " + val1 + "\nOperazione: "+op + "\nOperando 2: "+val2);
-        
+                 */
 
+            } catch (IOException ex) {
+                Logger.getLogger(Calculator.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
+        }
     }
-    
 }
+// System.out.println("\nOperando 1: " + val1 + "\nOperazione: "+op + "\nOperando 2: "+val2);
+
+
