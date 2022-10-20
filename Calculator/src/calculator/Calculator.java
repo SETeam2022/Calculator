@@ -26,6 +26,7 @@ public class Calculator {
         String val1="";
         String op="";
         String val2="";
+        String res="";
         try {
             System.out.print("\nInserisci operando 1: ");
             val1 = br.readLine();
@@ -33,7 +34,9 @@ public class Calculator {
             op = br.readLine();
             System.out.print("\nInserisci operando 2: ");
             val2= br.readLine();
-            String res = cal.parse(val1, op, val2);
+            
+            if(!op.equalsIgnoreCase("=")) res = cal.parse(val1, op, val2);
+            else res = cal.parse(val1, op);
             System.out.println("Risultato: "+res);
         } catch (IOException ex) {
             Logger.getLogger(Calculator.class.getName()).log(Level.SEVERE, null, ex);
