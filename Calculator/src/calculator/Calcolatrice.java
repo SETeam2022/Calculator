@@ -60,7 +60,7 @@ public class Calcolatrice {
     
     private Double parseVal(String val){
         if(val.equalsIgnoreCase("ans")) return ans;
-        
+        if(val.equalsIgnoreCase("m")) return M;
         if(Pattern.matches("^\\d+$",val)) return Double.valueOf(val);
         return null;
     }
