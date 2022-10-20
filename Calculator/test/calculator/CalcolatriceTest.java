@@ -94,6 +94,18 @@ public class CalcolatriceTest {
         //assertEquals("2",a.parse("4", "-", "2"));
     }
     
+    @Test
+    public void testShowAns(){
+        double b = a.sum(4,3);
+        assertEquals(a.showAns(), b, 0);
+        b = a.difference(4,3);
+        assertEquals(a.showAns(), b, 0);
+        b = a.product(4,3);
+        assertEquals(a.showAns(), b, 0);
+        b = a.ratio(4,3);
+        assertEquals(a.showAns(), b, 0);
+    }
+    
     
     
     
