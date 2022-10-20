@@ -69,10 +69,9 @@ public class Calcolatrice {
         this.ans = ans;
     }
 
-    double showAns() {
+    double getAns() {
         return (this.ans);
     }
-    
     
     private Double parseVal(String val){
         if(val.equalsIgnoreCase("ans")) return ans;
@@ -108,30 +107,22 @@ public class Calcolatrice {
     }
 
     public String parse(String op, String val1) {
+        
+        Double a = parseVal(val1);
 
-        if ((op.equals("=")) && (val1.equalsIgnoreCase("ans"))) {
-            
-            return Double.toString(showAns());
-            
-        } else if (op.equals("sin")){
-            
-            return Double.toString(sin(Double.parseDouble(val1)));
-            
-        } else if (op.equals("cos")){
-            
-            return Double.toString(cos(Double.parseDouble(val1)));
-            
-        } else if (op.equals("tan")){
-            
-            return Double.toString(tan(Double.parseDouble(val1)));
-            
-        } else if (op.equals("arctan")){
-            
-            return Double.toString(arctan(Double.parseDouble(val1)));
-            
-        } else {
-            
-            return "Operatore non supportato";
+        switch (op) {
+            case "=":
+                return Double.toString(a);
+            case "sin":
+                return Double.toString(sin(a));
+            case "cos":
+                return Double.toString(cos(a));
+            case "tan":
+                return Double.toString(tan(a));
+            case "arctan":
+                return Double.toString(arctan(a));
+            default:
+                return "Operatore non supportato";
         }
     }
 
