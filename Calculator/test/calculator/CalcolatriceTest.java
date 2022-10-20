@@ -84,7 +84,7 @@ public class CalcolatriceTest {
     
     @Test
     public void testParse(){
-        assertTrue(a.parse("1", "c", "2").equalsIgnoreCase("Operando non supportato"));
+        assertTrue(a.parse("1", "c", "2").equalsIgnoreCase("Operatore non supportato"));
         assertTrue(a.parse("1", "+", "2").equalsIgnoreCase("3.0"));
         assertTrue(a.parse("1", "-", "2").equalsIgnoreCase("-1.0"));
         assertTrue(a.parse("1", "*", "2").equalsIgnoreCase("2.0"));
