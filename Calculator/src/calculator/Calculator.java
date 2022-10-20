@@ -27,21 +27,23 @@ public class Calculator {
         String op="";
         String val2="";
         String res="";
+        while(true){
         try {
             System.out.print("\nInserisci operando 1: ");
             val1 = br.readLine();
             System.out.print("\nInserisci operazione: ");
             op = br.readLine();
+            if(op.equalsIgnoreCase("=")) res = cal.parse(val1, op);
+            else{
             System.out.print("\nInserisci operando 2: ");
             val2= br.readLine();
-            
-            if(!op.equalsIgnoreCase("=")) res = cal.parse(val1, op, val2);
-            else res = cal.parse(val1, op);
+            res =cal.parse(val1, op, val2);
+            }
             System.out.println("Risultato: "+res);
         } catch (IOException ex) {
             Logger.getLogger(Calculator.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+        }
        // System.out.println("\nOperando 1: " + val1 + "\nOperazione: "+op + "\nOperando 2: "+val2);
         
 
