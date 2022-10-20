@@ -28,7 +28,7 @@ public class Calculator {
         String val2 = "";
         String res = "";
 
-        System.out.print("\nCALCOLATRICE POLACCA INVERSA\n");
+        System.out.print("\nCALCOLATRICE POLACCA\n");
 
         while (true) {
             try {
