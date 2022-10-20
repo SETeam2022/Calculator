@@ -72,13 +72,15 @@ public class Calcolatrice {
         return (this.ans);
     }
 
-    public String parse(String val1, String op, String val2) {
-
+    public String parse(String op, String val1, String val2) {
+        Double a;
+        
         if (val1.equalsIgnoreCase("ans")) {
-            val1 = Double.toString(ans);
+            a = ans;
+        } else {
+            a = Double.parseDouble(val1);
         }
 
-        Double a = Double.parseDouble(val1);
         Double b = Double.parseDouble(val2);
 
         if (op.equals("+")) {
@@ -103,7 +105,7 @@ public class Calcolatrice {
         return "Operatore non supportato";
     }
 
-    public String parse(String val1, String op) {
+    public String parse(String op, String val1) {
 
         if ((op.equals("=")) && (val1.equalsIgnoreCase("ans"))) {
             return Double.toString(showAns());
