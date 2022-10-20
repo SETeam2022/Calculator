@@ -7,6 +7,7 @@ package calculator;
 
 import java.lang.Math;
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 /**
  *
@@ -71,21 +72,18 @@ public class Calcolatrice {
     double showAns() {
         return (this.ans);
     }
-
+    
+    
+    private Double parseVal(String val){
+        if(val.equalsIgnoreCase("ans")) return ans;
+        
+        if(Pattern.matches("^\\d+$",val)) return Double.valueOf(val);
+        return null;
+    }
+    
     public String parse(String op, String val1, String val2) {
-        Double a, b;
-
-        if (val1.equalsIgnoreCase("ans")) {
-            a = ans;
-        } else {
-            a = Double.parseDouble(val1);
-        }
-
-        if (val2.equalsIgnoreCase("ans")) {
-            b = ans;
-        } else {
-            b = Double.parseDouble(val2);
-        }
+        Double a = parseVal(val1);
+        Double b = parseVal(val2);
 
         if (op.equals("+")) {
             setAns(sum(a, b));
