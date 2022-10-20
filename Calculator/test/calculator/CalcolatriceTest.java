@@ -15,10 +15,6 @@ public class CalcolatriceTest {
     
     private static final double DELTA = 1e-15;
     Calcolatrice a;
-    
-    public CalcolatriceTest() {
-        
-        }
   
     @Before
     public void fixture(){
@@ -54,7 +50,8 @@ public class CalcolatriceTest {
         assertEquals(12, a.product(-4,-3),DELTA); // entrambi i numeri negativi
         assertEquals(-12, a.product(4,-3),DELTA); // il primo maggiore in modulo
         assertEquals(-12, a.product(3,-4),DELTA); // il secondo maggiore in modulo
-        assertEquals(0, a.product(4,0),DELTA); // uno degli operandi è 
+        assertEquals(0, a.product(4,0),DELTA); // uno degli operandi è 0
+        
     }
     
     @Test
@@ -65,6 +62,7 @@ public class CalcolatriceTest {
         assertEquals(-2, a.ratio(8,-4),DELTA); // il primo maggiore in modulo
         assertEquals(-0.5, a.ratio(4,-8),DELTA); // il secondo maggiore in modulo
         assertEquals(0, a.ratio(0,4),DELTA); // uno degli operandi è 0
+        
     }
     
     @Test(expected=ZeroDivisionException.class)
@@ -72,29 +70,28 @@ public class CalcolatriceTest {
         a.ratio(3, 0);
     }
     
-        
     @Test
     public void testSin(){
         double b = Math.sin(30);
-        assertEquals(b, a.sin(30), 0);
+        assertEquals(b, a.sin(30), DELTA);
     }
     
     @Test
     public void testCos(){
         double b = Math.cos(30);
-        assertEquals(b, a.cos(30), 0);
+        assertEquals(b, a.cos(30), DELTA);
     }
    
     @Test
     public void testTan(){
         double b = Math.tan(90);
-        assertEquals(b, a.tan(90), 0);
+        assertEquals(b, a.tan(90), DELTA);
     }
     
     @Test
     public void testArctan(){
         double b = 1/Math.tan(90);
-        assertEquals(b, a.arctan(90), 0);
+        assertEquals(b, a.arctan(90), DELTA);
     }
     
     @Test
@@ -109,21 +106,21 @@ public class CalcolatriceTest {
     @Test
     public void testGetAns(){
         double b = a.sum(4,3);
-        assertEquals(a.getAns(), b, 0);
+        assertEquals(a.getAns(), b, DELTA);
         b = a.difference(4,3);
-        assertEquals(a.getAns(), b, 0);
+        assertEquals(a.getAns(), b, DELTA);
         b = a.product(4,3);
-        assertEquals(a.getAns(), b, 0);
+        assertEquals(a.getAns(), b, DELTA);
         b = a.ratio(4,3);
-        assertEquals(a.getAns(), b, 0);
+        assertEquals(a.getAns(), b, DELTA);
         b = a.sin(30);
-        assertEquals(a.getAns(),b, 0);
+        assertEquals(a.getAns(),b, DELTA);
         b = a.cos(30);
-        assertEquals(a.getAns(),b, 0);
+        assertEquals(a.getAns(),b, DELTA);
         b = a.tan(90);
-        assertEquals(a.getAns(),b, 0);
+        assertEquals(a.getAns(),b, DELTA);
         b = a.arctan(90);
-        assertEquals(a.getAns(),b, 0);
+        assertEquals(a.getAns(),b, DELTA);
     }  
     
 }
