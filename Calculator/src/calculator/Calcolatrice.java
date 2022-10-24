@@ -94,6 +94,9 @@ public class Calcolatrice {
     
     public String parse(String op, String val1, String val2) {
         
+        if ((parseVal(val1)) == null || (parseVal(val2)) == null){
+            return "Valore non supportato";
+        }else{
         Double a = parseVal(val1);
         Double b = parseVal(val2);
         
@@ -109,12 +112,16 @@ public class Calcolatrice {
         }
         
         return "Operatore non supportato";
-        
+        }
     }
 
     public String parse(String op, String val1) {
         
-        Double a = parseVal(val1);
+        if(parseVal(val1) == null){
+            return "Valore non supportato!";
+        }
+        else{
+            Double a = parseVal(val1);
         
         switch (op) {
             case "=":
@@ -136,7 +143,7 @@ public class Calcolatrice {
         }
         
         return "Operatore non supportato";
-        
+        }
     }
     
     public void parse(String op){
