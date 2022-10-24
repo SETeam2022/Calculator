@@ -142,6 +142,7 @@ public class Calcolatrice {
     public void parse(String op){
         M=0;
         // ToDo: init all variables in memory
+        // ex.
     }
 
 }
